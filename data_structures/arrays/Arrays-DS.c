@@ -4,9 +4,12 @@
 
 int printReverseArray(int *arrayToReverse, int arrayLength)
 {
-  for (int index = arrayLength; index == 0; index--)
+   
+  int index = (arrayLength - 1);
+  while (index >= 0)
     {
       printf("%d ", arrayToReverse[index]);
+      index--;
     }
 
   return EXIT_SUCCESS;
