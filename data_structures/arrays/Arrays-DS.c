@@ -1,3 +1,4 @@
+/* https://www.hackerrank.com/challenges/arrays-ds */
 #include <stdio.h>
 #include <stdlib.h>
 
