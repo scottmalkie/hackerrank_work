@@ -1,0 +1,47 @@
+    // XOR is commutative and associative
+    // another counter for k+1, k+2, ... k
+    // 123 = 1,2,3,1,2,2,3,1,2,3 = 3x1 4x2 3x3
+    
+    // 1234 = 1,2,3,4,1,2,2,3,3,4,1,2,3,2,3,4,1,2,3,4 = 4x1 6x2 6x3 4x4
+    
+    // 12345 = 1,2,3,4,5,1,2,2,3,3,4,4,5,1,2,3,2,3,4,3,4,5,1,2,3,4,2,3,4,5,1,2,3,4,5 = 5x1 8x2 9x3 8x4 5x5
+    
+    // 123456 = 1,2,3,4,5,6,1,2,2,3,3,4,4,5,5,6,1,2,3,2,3,4,3,4,5,4,5,6,1,2,3,4,2,3,4,5,3,4,5,6,1,2,3,4,5,2,3,4,5,6,1,2,3,4,5,6
+    // 6x1 10x2 12x3 12x4 10x5 6x6    
+    
+             3 4 3
+            4 6 6 4
+           5 8 9 8 5
+        6 10 12 12 10 6
+       7 12 15 16 15 12 7
+      8 14 18 20 20 18 14 8
+      9 25
+      10 
+      11 36
+      12
+      13 49
+
+     
+     number of elements = n
+     index of elements = k
+     counter (i = 0)
+
+     if n is even (% 2 == 0)
+     index[n - n] = n * element
+     index[n - 3] = 
+     index[n - 2] = 
+     index[n - 1] = n * element
+
+     if n is odd (% 2 == 1)
+
+     first and last = n
+     first + 1 and last - 1 = 2x(n-1)
+     first + 2 and last - 2 = 3x(n-2)
+     first + 3 and last - 3 = 4x(n-3)
+     middle (if exists) is (n+1)/2))((n+1)/2))
+
+     4 = 2+3
+     6 = 2+5
+     8 = 2+7
+
+
