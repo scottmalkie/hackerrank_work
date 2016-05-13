@@ -8,7 +8,7 @@ int calculateLargestHourglass(int *hourglassArray, int arraysize)
    
    int hourglassIndexPivots[16] = {7, 8, 9, 10, 13, 14, 15, 16, 19, 22, 21, 22, 25, 26, 27, 28};
    
-   int largestHourglassSum = 0;
+   int largestHourglassSum = -63;  // start at lowest possible sum
    
    // hourglass == [-7][-6][-5][pivot][+5][+6][+7] 
    for (int index = 0; index < 16; index++)
