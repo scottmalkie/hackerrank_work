@@ -5,6 +5,11 @@
 int seqList[1000000];
 int lastAns = 0;
 
+int findSeq(int seqIndex)
+{
+   return seqIndex;
+}
+
 int query1(int seqIndex, int appendInt)
 {
    return seqIndex;
