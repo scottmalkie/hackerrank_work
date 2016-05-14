@@ -4,5 +4,8 @@
 
 int main(void)
 {
+   int numberOfTestcases;
+   scanf("%d", &numberOfTestcases);
+   
    return EXIT_SUCCESS;
 }
