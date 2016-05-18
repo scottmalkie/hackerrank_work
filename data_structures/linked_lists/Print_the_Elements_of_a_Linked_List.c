@@ -3,34 +3,55 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-struct Node
+typedef struct Node
 {
 	 int data;
-	 struct Node *next;
-}
+	 struct Node* next;
+} Node;
 
-void Print(Node *head)
+int printData(Node* head)
 {
-	printf("%d", Node->data);
+	printf("%d\n", head->data);
+	
+	return EXIT_SUCCESS;
 }
 
 int main(void)
 {
-	for (int index = 0; ; index++)
+	Node* theList;  //initialize head node
+	theList = NULL; //initially points nowhere
+	
+	Node* temp = malloc(sizeof(Node)); // allocate first node
+	temp->data = 1;  
+	temp->next = NULL;
+	theList = temp;
+			
+	Node* traversal;
+	traversal = theList;
+	
+	while (traversal->next != NULL)
 	{
-		if ((Node->next * index) != NULL)
-		{
-			Printf(Node->next * index);
-		}
-		else if ((Node->next * index) == NULL)
-		{
-			printf("Reached end of list");
-			return EXIT_SUCCESS;
-		}
-		else 
-		{
-			printf("Error parsing linked list!")
-			return EXIT_FAILURE;
-		}
+		traversal = traversal->next;
+		printData(traversal);
+	}
+	
+	traversal->next = temp;
+	
+	Node* temp2 = malloc(sizeof(Node)); // allocate second node
+	temp2->data = 2;  
+	temp2->next = NULL;
+	theList = temp2;
+	
+	Node* traversal2;
+	traversal2 = theList;
+	
+	while (traversal2->next != NULL)
+	{
+		traversal2 = traversal2->next;
+		printData(traversal2);
+	}
+	
+	traversal2->next = temp2;
 
+	return EXIT_SUCCESS;
 }
