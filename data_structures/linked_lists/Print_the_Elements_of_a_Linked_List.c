@@ -19,12 +19,13 @@ int printData(Node* head)
 int main(void)
 {
 	Node* theList;  //initialize head node
-	theList = NULL; //initially points nowhere
+	theList->data = 0; //dummy data
+	theList->next = NULL; //initially points nowhere
 	
 	Node* temp = malloc(sizeof(Node)); // allocate first node
 	temp->data = 1;  
 	temp->next = NULL;
-	theList = temp;
+	theList->next = temp;
 			
 	Node* traversal;
 	traversal = theList;
