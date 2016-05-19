@@ -9,12 +9,32 @@ typedef struct Node
 	 struct Node* next;
 } Node;
 
-int printData(Node* head)
+int printData(Node* element)
 {
-	printf("%d\n", head->data);
+	printf("%d\n", element->data);
 	
 	return EXIT_SUCCESS;
 }
+
+int insertNode(Node* element, int elementData)
+{
+	Node* temp = malloc(sizeof(Node)); // allocate node
+	temp->data = elementData;  
+	temp->next = NULL;
+	element->next = temp;
+			
+	Node* traversal;
+	traversal = element;
+	
+	while (traversal->next != NULL)
+	{
+		traversal = traversal->next;
+	}
+	traversal->next = temp;
+	
+	return EXIT_SUCCESS;
+}
+
 
 int main(void)
 {
@@ -22,37 +42,19 @@ int main(void)
 	theList->data = 0; //dummy data
 	theList->next = NULL; //initially points nowhere
 	
-	Node* temp = malloc(sizeof(Node)); // allocate first node
-	temp->data = 1;  
-	temp->next = NULL;
-	theList->next = temp;
-			
+	for (int index = 0; index < 5; index++)
+	{
+		insertNode(theList, index);
+	}	
+	
 	Node* traversal;
-	traversal = theList;
+	traversal = theList;  //set to head node
 	
 	while (traversal->next != NULL)
 	{
 		traversal = traversal->next;
 		printData(traversal);
 	}
-	
-	traversal->next = temp;
-	
-	Node* temp2 = malloc(sizeof(Node)); // allocate second node
-	temp2->data = 2;  
-	temp2->next = NULL;
-	theList = temp2;
-	
-	Node* traversal2;
-	traversal2 = theList;
-	
-	while (traversal2->next != NULL)
-	{
-		traversal2 = traversal2->next;
-		printData(traversal2);
-	}
-	
-	traversal2->next = temp2;
 
 	return EXIT_SUCCESS;
 }
