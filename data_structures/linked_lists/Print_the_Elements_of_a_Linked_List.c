@@ -45,16 +45,9 @@ int main(void)
 	for (int index = 0; index < 5; index++)
 	{
 		insertNode(theList, index);
+		printData(theList);
 	}	
 	
-	Node* traversal;
-	traversal = theList;  //set to head node
-	
-	while (traversal->next != NULL)
-	{
-		traversal = traversal->next;
-		printData(traversal);
-	}
 
 	return EXIT_SUCCESS;
 }
