@@ -1,7 +1,6 @@
 /* https://www.hackerrank.com/challenges/print-the-elements-of-a-linked-list */
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdbool.h>
 
 typedef struct Node
 {
@@ -11,7 +10,14 @@ typedef struct Node
 
 int printData(Node* element)
 {
-	printf("%d\n", element->data);
+	Node* traversal;
+	traversal = element;
+	
+	while (traversal->next != NULL)
+	{
+		traversal = traversal->next;
+		printf("%d\n", traversal->data);
+	}
 	
 	return EXIT_SUCCESS;
 }
@@ -22,7 +28,7 @@ int insertNode(Node* element, int elementData)
 	temp->data = elementData;  
 	temp->next = NULL;
 	element->next = temp;
-			
+	
 	Node* traversal;
 	traversal = element;
 	
@@ -30,7 +36,7 @@ int insertNode(Node* element, int elementData)
 	{
 		traversal = traversal->next;
 	}
-	traversal->next = temp;
+	traversal->next = NULL;
 	
 	return EXIT_SUCCESS;
 }
@@ -42,12 +48,9 @@ int main(void)
 	theList->data = 0; //dummy data
 	theList->next = NULL; //initially points nowhere
 	
-	for (int index = 0; index < 5; index++)
-	{
-		insertNode(theList, index);
-		printData(theList);
-	}	
+	insertNode(theList, 1);
+	insertNode(theList, 2);
+	printData(theList);
 	
-
 	return EXIT_SUCCESS;
 }
