@@ -22,19 +22,19 @@ int printData(Node* element)
 	return EXIT_SUCCESS;
 }
 
-int insertNode(Node* element, int elementData)
+int insertNode(Node** element, int elementData)
 {
 	Node* temp = malloc(sizeof(Node)); // allocate node
 	temp->data = elementData;  
 	temp->next = NULL;
-	element->next = temp;
+	//element->next = temp;
 	
 	Node* traversal;
-	traversal = element;
+	traversal = *element;
 	
 	while (traversal->next != NULL)
 	{
-		traversal = traversal->next;
+	     traversal = traversal->next;
 	}
 	traversal->next = NULL;
 	
@@ -48,8 +48,8 @@ int main(void)
 	theList->data = 0; //dummy data
 	theList->next = NULL; //initially points nowhere
 	
-	insertNode(theList, 1);
-	insertNode(theList, 2);
+	insertNode(&theList, 1);
+	insertNode(&theList, 2);
 	printData(theList);
 	
 	return EXIT_SUCCESS;
